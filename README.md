@@ -7,6 +7,12 @@ the list also works as a launcher.
 
 Works with Raycast Free on Macs with Apple silicon. No Pro APIs, no Screen Recording, no network, no background process.
 
+![Pinned + Badged: pinned apps with their Dock badges, Minimized tags, and the pinned Trash row](media/pinned-and-badged.png)
+
+![Manage Pinned Apps: Pinned, Badge Tracking, Utilities, and Available sections](media/manage-pinned-apps.png)
+
+![Badged Only: just the apps that have a Dock badge right now](media/badged-only.png)
+
 ## Requirements
 
 - A Mac with Apple silicon. Both helpers are built for arm64 only; on an Intel Mac the list says "Requires a Mac with
