@@ -1,3 +1,4 @@
+<!-- GitHub's copy of the README: identical to ../README.md plus the Install section (test/readme.test.ts). ray publish never copies .github, so the Store gets ../README.md. -->
 # Window Switcher & Badges
 
 One hotkey opens one app-first list. Every running app with a discovered window is there, so any window (hidden,
@@ -7,11 +8,11 @@ the list also works as a launcher.
 
 Works with Raycast Free on Macs with Apple silicon. No Pro APIs, no Screen Recording, no network, no background process.
 
-![Pinned + Badged: pinned apps with their Dock badges, Minimized tags, and the pinned Trash row](media/pinned-and-badged.png)
+![Pinned + Badged: pinned apps with their Dock badges, Minimized tags, and the pinned Trash row](../media/pinned-and-badged.png)
 
-![Manage Pinned Apps: Pinned, Badge Tracking, Utilities, and Available sections](media/manage-pinned-apps.png)
+![Manage Pinned Apps: Pinned, Badge Tracking, Utilities, and Available sections](../media/manage-pinned-apps.png)
 
-![Badged Only: just the apps that have a Dock badge right now](media/badged-only.png)
+![Badged Only: just the apps that have a Dock badge right now](../media/badged-only.png)
 
 ## Requirements
 
@@ -22,6 +23,46 @@ Works with Raycast Free on Macs with Apple silicon. No Pro APIs, no Screen Recor
 
 Do not switch Raycast's Accessibility permission off while Raycast is running: on the author's Mac that froze keyboard
 and click input twice (Raycast's Hyper Key event tap). Quit Raycast first if you need to change it.
+
+## Install
+
+You need [Raycast](https://www.raycast.com) and about ten minutes. No GitHub account is needed.
+
+1. **Install Node.js.** Raycast uses it to build the extension. Download the **LTS** installer from
+   [nodejs.org](https://nodejs.org) and run it (version 22.22 or later). Skip this step if you already have it.
+2. **Download the extension.** At the top of this page, click the green **Code** button, then **Download ZIP**.
+   Double-click the downloaded file in your Downloads folder to unzip it (Safari may have done this already). You get a
+   folder named `raycast-app-management-main`.
+3. **Open Terminal.** Press ⌘Space, type `Terminal`, and press Return. Type `cd` followed by a space, drag the
+   `raycast-app-management-main` folder onto the Terminal window, and press Return.
+4. **Let the two helpers run.** macOS marks downloaded files, and it blocks the extension's two small helper programs
+   ("Apple could not verify…") because they are not notarized by Apple. Their full source code is in the `helper`
+   folder, and "How it works" below explains what they do. To clear the mark on this folder only, paste this into
+   Terminal and press Return:
+
+   ```bash
+   xattr -dr com.apple.quarantine .
+   ```
+
+5. **Build the extension and add it to Raycast.** Paste these two commands, one at a time, pressing Return after each:
+
+   ```bash
+   npm install
+   ```
+
+   ```bash
+   npm run dev
+   ```
+
+   The first one downloads what the build needs (about a minute). The second builds the extension and adds it to
+   Raycast. When Terminal shows `ready - built extension successfully`, press ⌃C (Control-C) to stop it. The
+   extension stays installed: you can close Terminal and delete both the ZIP file and the folder.
+6. **Allow Accessibility.** Open System Settings → Privacy & Security → Accessibility (Device Control and Data Access on
+   macOS 27) and turn on **Raycast**. If it is already on, there is nothing to do (see the note above about changing it
+   while Raycast runs).
+7. **Set a hotkey** for **Manage Apps** (next section) and press it.
+
+To update later, download the ZIP again and repeat steps 2 to 5.
 
 ## Set the hotkeys
 
