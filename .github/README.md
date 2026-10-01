@@ -1,4 +1,4 @@
-<!-- GitHub's copy of the README: identical to ../README.md plus the Install section (test/readme.test.ts). ray publish never copies .github, so the Store gets ../README.md. -->
+<!-- GitHub's copy of the README: identical to ../README.md plus the demo video and the Install section (test/readme.test.ts). ray publish never copies .github, so the Store gets ../README.md. -->
 
 # Window Switcher & Badges
 
@@ -8,6 +8,8 @@ apps stay in the list even with no window open, so it also works as a launcher.
 
 Works with Raycast Free on Macs with Apple silicon. No Pro features, Screen Recording, network access, or background
 process.
+
+https://github.com/user-attachments/assets/30b81cf3-1029-457f-8c16-dbfb1e764dec
 
 ![Pinned + Badged: pinned apps with their Dock badges, Minimized tags, and the pinned Trash row](../media/pinned-and-badged.png)
 
