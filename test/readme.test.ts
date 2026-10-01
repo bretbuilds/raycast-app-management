@@ -12,7 +12,7 @@ const github = readFileSync(join(root, ".github/README.md"), "utf8");
 
 function withoutGithubOnlyParts(text: string): string {
   return text
-    .replace(/^<!--[^\n]*-->\n/, "")
+    .replace(/^<!--[^\n]*-->\n+/, "")
     .replace(/## Install\n[\s\S]*?(?=## Set the hotkeys\n)/, "")
     .replaceAll("](../media/", "](media/");
 }
